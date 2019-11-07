@@ -88,9 +88,7 @@ public class Main {
             for (Tag tag : tags) {
                 tagsTxt += tag.getTag() + ",";
             }
-            if (tagsTxt.endsWith(",")) {
-                tagsTxt = tagsTxt.substring(0, tagsTxt.length() - 1);
-            }
+            if (tagsTxt.endsWith(",")) tagsTxt = tagsTxt.substring(0, tagsTxt.length() - 1);
             obj.put("article", article);
             obj.put("tags", tagsTxt);
             obj.put("user", request.session().attribute("user"));
@@ -112,22 +110,14 @@ public class Main {
             request.queryParams("username");
             User user = Users.getInstance().validateCredentials(request.queryParams("username"), request.queryParams("password"));
             boolean rememberMe = false;
-            if(request.queryParams("remember-me") != null) {
-                rememberMe = true;
-            }
+            if(request.queryParams("remember-me") != null) rememberMe = true;
 
             if(user != null){
                 Session session = request.session(true);
                 session.attribute("user", user);
-                if(rememberMe){
-                    response.cookie("MY-COOKIE", user.getId(), 604800);
-                }
-
+                if(rememberMe) response.cookie("MY-COOKIE", user.getId(), 604800);
                 response.redirect("/");
-
-            }else{
-                response.redirect("/login");
-            }
+            }else response.redirect("/login");
             return "";
         });
 
@@ -140,11 +130,8 @@ public class Main {
         post("/create-user", (request, response) -> {
             User user = new User(request.queryParams("username"),request.queryParams("name"), request.queryParams("password"), request.queryParams("role"));
             boolean result = Users.getInstance().createUser(user);
-            if(result){
-                response.redirect("/");
-            }else{
-                response.redirect("/create-user");
-            }
+            if(result) response.redirect("/");
+            else response.redirect("/create-user");
 
             return "";
         });
