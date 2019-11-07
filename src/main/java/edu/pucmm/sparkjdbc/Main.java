@@ -6,6 +6,7 @@ import edu.pucmm.sparkjdbc.Models.Comment;
 import edu.pucmm.sparkjdbc.Models.Tag;
 import edu.pucmm.sparkjdbc.Models.User;
 import edu.pucmm.sparkjdbc.services.*;
+import edu.pucmm.sparkjdbc.utils.Filters;
 import spark.ModelAndView;
 import spark.Session;
 import spark.template.freemarker.FreeMarkerEngine;
@@ -24,32 +25,8 @@ public class Main {
         staticFiles.location("/public");
         SQL.startDb();
         SQL.createTables();
-        before((request, response) -> {
-            User user = request.session().attribute("user");
-            if(request.cookie("USER") != null && user == null){
-                String userUID = request.cookie("USER");
-                user = Users.getInstance().getUser(userUID);
-                Session session = request.session(true);
-                session.attribute("user", user);
-            }
-        });
-
+        Filters.applyFilters();
         //--------------------------- 💬START ARTICLE CRUD💬 ----------------------------------------//
-        before("/new-article", (request, response) -> {
-            User user = request.session().attribute("user");
-            if(user == null){
-                response.redirect("/");
-            }
-        });
-
-        before("/articles/:id/edit", (request, response) -> {
-            User user = request.session().attribute("user");
-            if(user == null){
-                response.redirect("/");
-            }
-        });
-
-
         get("/", (request, response) -> {
             Map<String, Object> obj = new HashMap<>();
             obj.put("articles", Articles.getInstance().getArticles());
@@ -120,14 +97,6 @@ public class Main {
             return renderFreemarker(obj, "edit-article.ftl");
         });
 
-        before("/articles/:id/delete", (request, response) -> {
-            User user = request.session().attribute("user");
-            System.out.println(user);
-            if(user == null){
-                response.redirect("/");
-            }
-        });
-
         post("/articles/:id/delete", (request, response) -> {
             Articles.getInstance().deleteArticle(request.params("id"));
             System.out.println("ds");
@@ -137,25 +106,7 @@ public class Main {
         //--------------------------- 💬FINISH ARTICLE CRUD💬 ----------------------------------------//
 
         // ---------------------------- 👩🏽‍💻👨🏽‍💻START USER CRUD👩🏽‍💻👨🏽‍💻 -------------------------------------//
-        before("/login", (request, response) -> {
-            User user = request.session().attribute("user");
-            if(user != null){
-                response.redirect("/");
-            }
-        });
-
-        before("/create-user", (request, response) -> {
-            User user = request.session().attribute("user");
-
-            if(user == null || !user.getRole().equalsIgnoreCase("admin")){
-                response.redirect("/");
-            }
-
-        });
-
-        get("/login", (request, response) -> {
-            return renderFreemarker(null, "login.ftl");
-        });
+        get("/login", (request, response) -> renderFreemarker(null, "login.ftl"));
 
         post("/login", (request, response) -> {
             request.queryParams("username");
@@ -169,7 +120,7 @@ public class Main {
                 Session session = request.session(true);
                 session.attribute("user", user);
                 if(rememberMe){
-                    response.cookie("USER", user.getId(), 604800);
+                    response.cookie("MY-COOKIE", user.getId(), 604800);
                 }
 
                 response.redirect("/");
@@ -200,20 +151,12 @@ public class Main {
 
         get("/logout", (request, response) -> {
             request.session().removeAttribute("user");
-            response.removeCookie("USER");
+            response.removeCookie("MY-COOKIE");
             response.redirect("/login");
             return "";
         });
         // ---------------------------- 👩🏽‍💻👨🏽‍💻FINISH USER CRUD👩🏽‍💻👨🏽‍💻 -------------------------------------//
         // ---------------------------- 💻START COMMENTS CRUD💻 --------------------------------------//
-
-        before("/comments/*", (request, response) -> {
-            User user = request.session().attribute("user");
-            if(user == null){
-                response.redirect("/");
-            }
-        });
-
         post("/comments/new/:article_id", (request, response) -> {
             Comment comment = new Comment();
             comment.setComment(request.queryParams("comment"));
