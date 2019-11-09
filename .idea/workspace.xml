@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b2b604c-57ab-486c-a803-020859b39ac5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/isc415-sparkblog-.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Articles.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Articles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Comments.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Comments.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/DB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Tags.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Tags.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/TagsInArticles.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/TagsInArticles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/services/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/utils/Filters.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/utils/Filters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/utils/Tags.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/edu/pucmm/sparkjdbc/utils/Tags.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,8 +150,23 @@
       <workItem from="1572901823868" duration="13136000" />
       <workItem from="1573084209977" duration="1862000" />
       <workItem from="1573278133505" duration="1346000" />
-      <workItem from="1573286566442" duration="612000" />
+      <workItem from="1573286566442" duration="1436000" />
     </task>
+    <task id="LOCAL-00001" summary="Test Shadow">
+      <created>1573287223911</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573287223911</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Test Shadow">
+      <created>1573287264750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573287264750</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,5 +184,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test Shadow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Shadow" />
   </component>
 </project>

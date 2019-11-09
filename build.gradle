@@ -18,6 +18,9 @@ dependencies {
     compile 'com.sparkjava:spark-template-freemarker:2.5.5'
     compile "org.slf4j:slf4j-simple:1.7.21"
     compile 'com.h2database:h2:1.4.191'
+    classpath 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
+    shadow 'junit:junit:3.8.2'
+
 }
 
 shadowJar {
@@ -25,6 +28,9 @@ shadowJar {
     classifier = null
     version = null
 }
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
 
 task stage {
     dependsOn shadowJar
